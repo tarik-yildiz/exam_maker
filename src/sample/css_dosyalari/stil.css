@@ -1,0 +1,18 @@
+#rootPane {
+    -fx-background-image: url("../arka_planlar/bgb.jpg");
+    -fx-background-size: cover ;
+}
+#butonStart{
+    -fx-background-radius: 100;
+}
+#soruBank{
+    -fx-border-color: #1b5fdc;
+}
+#sinavBank{
+    -fx-border-color: #1b5fdc;
+}
+#hbox{
+    -fx-border-color: #1b5fdc;
+    -fx-border-radius: 30;
+}
+

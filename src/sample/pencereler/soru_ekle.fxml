@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXComboBox?>
+<?import com.jfoenix.controls.JFXRadioButton?>
+<?import com.jfoenix.controls.JFXTextArea?>
+<?import com.jfoenix.controls.JFXToggleButton?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.SoruEklemeDialogController">
+   <top>
+      <VBox prefHeight="94.0" prefWidth="600.0" BorderPane.alignment="CENTER">
+         <children>
+            <HBox alignment="CENTER" prefHeight="58.0" prefWidth="600.0">
+               <children>
+                  <JFXToggleButton fx:id="toggleKlasik" onAction="#soruTuru" text="Klasik" />
+                  <JFXToggleButton fx:id="toggleTest" layoutX="10.0" layoutY="10.0" onAction="#soruTuru" text="Çoktan Seçmeli" />
+                  <JFXToggleButton fx:id="toggleDY" layoutX="153.0" layoutY="10.0" onAction="#soruTuru" text="Doğru-Yanlış" />
+                  <JFXToggleButton fx:id="toggleBosluk" layoutX="296.0" layoutY="10.0" onAction="#soruTuru" text="Boşluk Doldurma" />
+               </children>
+            </HBox>
+         </children>
+      </VBox>
+   </top>
+   <left>
+      <VBox alignment="TOP_CENTER" prefHeight="306.0" prefWidth="160.0" BorderPane.alignment="CENTER">
+         <children>
+            <Label text="Soru:" />
+            <JFXTextArea fx:id="areaSoru" onKeyTyped="#soruGirildiMi" />
+            <Label layoutX="10.0" layoutY="10.0" text="Cevap:" />
+            <JFXTextArea fx:id="areaCevap" layoutX="10.0" layoutY="44.0" />
+         </children>
+      </VBox>
+   </left>
+   <right>
+      <VBox alignment="CENTER" prefHeight="306.0" prefWidth="195.0" BorderPane.alignment="CENTER">
+         <children>
+            <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
+               <children>
+                  <Label text="A:" />
+                  <TextField fx:id="secenekA" />
+               </children>
+            </HBox>
+            <HBox alignment="CENTER" layoutX="10.0" layoutY="10.0" prefHeight="100.0" prefWidth="200.0">
+               <children>
+                  <Label text="B:" />
+                  <TextField fx:id="secenekB" />
+               </children>
+            </HBox>
+            <HBox alignment="CENTER" layoutX="10.0" layoutY="110.0" prefHeight="100.0" prefWidth="200.0">
+               <children>
+                  <Label text="C:" />
+                  <TextField fx:id="secenekC" />
+               </children>
+            </HBox>
+            <HBox alignment="CENTER" layoutX="10.0" layoutY="210.0" prefHeight="100.0" prefWidth="200.0">
+               <children>
+                  <Label text="D:" />
+                  <TextField fx:id="secenekD" />
+               </children>
+            </HBox>
+            <HBox alignment="CENTER" layoutX="10.0" layoutY="239.0" prefHeight="100.0" prefWidth="200.0">
+               <children>
+                  <Label text="Cevap:" />
+                  <JFXComboBox fx:id="comboCevap" prefHeight="25.0" prefWidth="138.0" />
+               </children>
+            </HBox>
+         </children>
+      </VBox>
+   </right>
+   <center>
+      <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0" BorderPane.alignment="CENTER">
+         <children>
+            <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0">
+               <children>
+                  <HBox alignment="CENTER" layoutX="10.0" layoutY="75.0" prefHeight="49.0" prefWidth="245.0">
+                     <children>
+                        <Label text="Zorluk:" />
+                        <JFXComboBox fx:id="zorlukBox" />
+                     </children>
+                  </HBox>
+                  <HBox alignment="CENTER" prefHeight="49.0" prefWidth="245.0">
+                     <children>
+                        <Label text="Puan: " />
+                        <JFXComboBox fx:id="puanBox" />
+                     </children>
+                  </HBox>
+               </children>
+            </VBox>
+            <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
+               <children>
+                  <JFXRadioButton fx:id="radioDogru" onAction="#radioController" text="DOGRU">
+                     <HBox.margin>
+                        <Insets right="10.0" />
+                     </HBox.margin>
+                  </JFXRadioButton>
+                  <JFXRadioButton fx:id="radioYanlis" onAction="#radioController" prefHeight="17.0" prefWidth="68.0" text="YANLIS" />
+               </children>
+            </HBox>
+            <JFXButton fx:id="soruEkleBtn" onAction="#soruEkleMetod" prefHeight="25.0" prefWidth="148.0" text="Soru Ekle" />
+         </children>
+      </VBox>
+   </center>
+</BorderPane>
